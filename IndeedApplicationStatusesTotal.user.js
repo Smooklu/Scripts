@@ -8,44 +8,36 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    setTimeout(function () {
-    let apd = document.createElement('div')
-    let bpd = document.createElement('div')
-    let cpd = document.createElement('div')
-    let a = document.createElement('div')
-    let b = document.createElement('div')
-    let c = document.createElement('div')
-    let as = document.createElement('span')
-    let bs = document.createElement('span')
-    let cs = document.createElement('span')
-    a.appendChild(as)
-    b.appendChild(bs)
-    c.appendChild(cs)
-    a.className = "atw-StatusTag-description atw-StatusTag-description--red"
-    b.className = "atw-StatusTag-description atw-StatusTag-description--blue"
-    c.className = "atw-StatusTag-description atw-StatusTag-description--green"
-    apd.appendChild(a)
-    bpd.appendChild(b)
-    cpd.appendChild(c)
-    let applied_status_applis = document.getElementsByClassName('atw-StatusTag-description--blue').length
-    let not_selected_applis = document.getElementsByClassName('atw-StatusTag-description--red').length
-    let appli_viewed = document.getElementsByClassName('atw-StatusTag-description--green').length
-    let total_applis = applied_status_applis + not_selected_applis + appli_viewed
-    let n_s_a_percent = Math.round(( not_selected_applis / total_applis) * 100)
-    let a_s_a_percent = Math.round(( applied_status_applis / total_applis) * 100)
-    let a_v_percent = Math.round(( appli_viewed / total_applis) * 100)
-    apd.children[0].children[0].innerText = 'Not selected: ' + not_selected_applis + ' (' + n_s_a_percent.toString() + "%)"
-    bpd.children[0].children[0].innerText = 'Applied: ' + applied_status_applis + ' (' + a_s_a_percent.toString() + "%)"
-    cpd.children[0].children[0].innerText = 'Application viewed: ' + appli_viewed + ' (' + a_v_percent.toString() + "%)"
-    apd.className = "atw-StatusTag atw-StatusTag--red"
-    bpd.className = "atw-StatusTag atw-StatusTag--blue"
-    cpd.className = "atw-StatusTag atw-StatusTag--green"
-    let imp_div = document.getElementsByClassName('atw-Updates')[0].children[0]
-    let first_appli = document.getElementsByClassName('atw-AppCard')[0]
-    imp_div.insertBefore(apd, first_appli)
-    imp_div.insertBefore(bpd, first_appli)
-    imp_div.insertBefore(cpd, first_appli)
-}, 2000)
-})();
+setTimeout(function () {
+    "use strict";
+    let first_appli = document.getElementsByClassName("atw-AppCard")[0];
+    let scratch_elem = document.createElement("div");
+    let categories = [
+        { color: "red", label: "Not selected", count: 0 },
+        { color: "blue", label: "Applied", count: 0 },
+        { color: "green", label: "Application viewed", count: 0 },
+    ];
+
+    // Set the count of each category and simultaneously get the total.
+    let total = categories.reduce((acc, cat) => {
+        cat.count = document.getElementsByClassName(
+            "atw-StatusTag-description--" + cat.color
+        ).length;
+        return acc + cat.count;
+    }, 0);
+
+    categories.forEach(({ color, label, count }) => {
+        const percentage = Math.round((count / total) * 100);
+        scratch_elem.innerHTML = `
+            <div class='atw-StatusTag atw-StatusTag--${color}'>
+                <div class='atw-StatusTag-description atw-StatusTag-description--${color}'>
+                    <span>${label}: ${count} (${percentage}%)</span>
+                </div>
+            </div>`;
+
+        first_appli.parentElement.insertBefore(
+            scratch_elem.firstElementChild,
+            first_appli
+        );
+    });
+}, 2000);
