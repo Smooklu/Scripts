@@ -3,7 +3,7 @@
 // @version      0.1
 // @description  Get the totals of application statuses.
 // @author       Smooklu
-// @match        https://myjobs.indeed.com/applied*
+// @include        https://myjobs.indeed.com/applied*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=indeed.com
 // @grant        none
 // ==/UserScript==
