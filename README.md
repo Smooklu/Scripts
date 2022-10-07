@@ -1,3 +1,3 @@
-# Userscripts
+# Scripts
 
-These are my personal miscellaneous user scripts. 
+These are my personal miscellaneous scripts. 
