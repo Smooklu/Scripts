@@ -1,0 +1,19 @@
+REM Developed for Flipper Zero DuckyScript Syntax
+REM Must be ran on login screen and dev mode enabled
+CTRL-ALT F2
+DELAY 2000
+STRING chronos
+ENTER
+DELAY 2000
+STRING cd; curl -LOk mrchromebox.tech/firmware-util.sh
+ENTER
+DELAY 500
+STRING sudo install -Dt /usr/local/bin -m 755 firmware-util.sh
+ENTER
+DELAY 500
+STRING sudo firmware-util.sh
+ENTER
+DELAY 2000
+STRING 1
+ENTER
+DELAY 500
