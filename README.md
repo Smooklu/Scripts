@@ -1,3 +1,3 @@
-# Scripts
+# Stuff
 
-These are my personal miscellaneous scripts. 
+These are my personal miscellaneous files. 
