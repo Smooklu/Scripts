@@ -1,0 +1,111 @@
+html {
+    --item-icon-transform-hover:  !important;
+    --item-icon-transform:  !important;
+    --font-body: Arial !important;
+    --font-headings: Arial !important;
+    --primary: white !important;
+    --background: #008081 !important;
+    --background-darker: #008081 !important;
+}
+
+label.lbl-toggle {
+    background-color: darkblue !important;
+    border-radius: 0px !important;
+    border-left: 2px darkgrey solid !important;
+    border-top: 2px darkgrey solid !important;
+    border-bottom: 2px grey solid !important;
+    border-right: 2px grey solid !important;
+    color: white !important;
+    font-family: Arial !important;
+    height: 15px !important;
+}
+label.lbl-toggle::before {
+    content: "" !important;
+    display: none !important;
+}
+label.lbl-toggle > h3 {
+    font-size: smaller !important;
+    position: absolute !important;
+}
+label.lbl-toggle > svg {
+    display: none !important;
+}
+label.lbl-toggle > div > img {
+    height: 18px !important;
+}
+label.lbl-toggle > div {
+    margin-right: .25rem !important;
+}
+div.item-wrapper {
+    background-color: grey !important;
+    border-radius: 0px !important;
+    border-left: 2px darkgrey solid !important;
+    border-top: 2px darkgrey solid !important;
+    border-bottom: 2px black solid !important;
+    border-right: 2px black solid !important;
+    margin-bottom: 3.5px !important;
+    margin-left: 2.5px !important;
+    margin-right: 2.5px !important;
+}
+
+div.item-wrapper:active {
+    background-color: lightgrey !important;
+    border-radius: 0px !important;
+    border-left: 2px black solid !important;
+    border-top: 2px black solid !important;
+    border-bottom: 2px darkgrey solid !important;
+    border-right: 2px darkgrey solid !important;
+    margin-bottom: 3.5px !important;
+    margin-left: 2.5px !important;
+    margin-right: 2.5px !important;
+}
+
+a.item {
+    border-radius: 0px !important;
+    color: black !important;
+    background: rgba(0, 0, 0, 0) !important;
+    --item-icon-transform:  !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    font-family: Arial !important;
+}
+
+a.item:active {
+    border-radius: 0px !important;
+    color: black !important;
+    background: rgba(0, 0, 0, 0) !important;
+    --item-icon-transform:  !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    font-family: Arial !important;
+}
+
+a.item:hover {
+    color: black !important;
+}
+
+div.content-inner {
+    background-color: lightgrey !important;
+}
+
+div.is-open.collapsable.col-1.row-1 {
+    padding: 0px !important;
+    border-radius: 0px !important;
+}
+
+.dot {
+    border-radius: 0% !important;
+    border: 2px black solid !important;
+}
+
+.dot-green {
+    background-color: lime !important;
+}
+
+.dot-red {
+    background-color: red !important;
+}
+
+.indicator:hover {
+    transform: scale(1) !important;
+}
