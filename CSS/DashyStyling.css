@@ -1,3 +1,6 @@
+:root {
+    --border-thickness: 2px;
+}
 html {
     --item-icon-transform-hover:  !important;
     --item-icon-transform:  !important;
@@ -6,15 +9,13 @@ html {
     --primary: white !important;
     --background: #008081 !important;
     --background-darker: #008081 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }
 
 label.lbl-toggle {
-    background-color: darkblue !important;
+    background: linear-gradient(90deg, rgba(0,0,139,1) 0%, rgba(4,141,228,1) 100%);
     border-radius: 0px !important;
-    border-left: 2px darkgrey solid !important;
-    border-top: 2px darkgrey solid !important;
-    border-bottom: 2px grey solid !important;
-    border-right: 2px grey solid !important;
     color: white !important;
     font-family: Arial !important;
     height: 15px !important;
@@ -36,13 +37,32 @@ label.lbl-toggle > div > img {
 label.lbl-toggle > div {
     margin-right: .25rem !important;
 }
+.item.side-bar-item.w-icon.has-tooltip {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    background-color: grey !important;
+    border-left: var(--border-thickness) darkgrey solid !important;
+    border-top: var(--border-thickness) darkgrey solid !important;
+    border-bottom: var(--border-thickness) black solid !important;
+    border-right: var(--border-thickness) black solid !important;
+    border-radius: 0px !important;
+}
+.item.side-bar-item.w-icon.has-tooltip:active {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    background-color: lightgrey !important;
+    border-left: var(--border-thickness) black solid !important;
+    border-top: var(--border-thickness) black solid !important;
+    border-bottom: var(--border-thickness) darkgrey solid !important;
+    border-right: var(--border-thickness) darkgrey solid !important;
+}
 div.item-wrapper {
     background-color: grey !important;
     border-radius: 0px !important;
-    border-left: 2px darkgrey solid !important;
-    border-top: 2px darkgrey solid !important;
-    border-bottom: 2px black solid !important;
-    border-right: 2px black solid !important;
+    border-left: var(--border-thickness) darkgrey solid !important;
+    border-top: var(--border-thickness) darkgrey solid !important;
+    border-bottom: var(--border-thickness) black solid !important;
+    border-right: var(--border-thickness) black solid !important;
     margin-bottom: 3.5px !important;
     margin-left: 2.5px !important;
     margin-right: 2.5px !important;
@@ -51,15 +71,14 @@ div.item-wrapper {
 div.item-wrapper:active {
     background-color: lightgrey !important;
     border-radius: 0px !important;
-    border-left: 2px black solid !important;
-    border-top: 2px black solid !important;
-    border-bottom: 2px darkgrey solid !important;
-    border-right: 2px darkgrey solid !important;
+    border-left: var(--border-thickness) black solid !important;
+    border-top: var(--border-thickness) black solid !important;
+    border-bottom: var(--border-thickness) darkgrey solid !important;
+    border-right: var(--border-thickness) darkgrey solid !important;
     margin-bottom: 3.5px !important;
     margin-left: 2.5px !important;
     margin-right: 2.5px !important;
 }
-
 a.item {
     border-radius: 0px !important;
     color: black !important;
@@ -91,11 +110,20 @@ div.content-inner {
 div.is-open.collapsable.col-1.row-1 {
     padding: 0px !important;
     border-radius: 0px !important;
+    border-left: var(--border-thickness) darkgrey solid !important;
+    border-top: var(--border-thickness) darkgrey solid !important;
+    border-bottom: var(--border-thickness) black solid !important;
+    border-right: var(--border-thickness) black solid !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+div.collapsible-content {
+    border-radius: 0px !important;
 }
 
 .dot {
     border-radius: 0% !important;
-    border: 2px black solid !important;
+    border: var(--border-thickness) black solid !important;
 }
 
 .dot-green {
